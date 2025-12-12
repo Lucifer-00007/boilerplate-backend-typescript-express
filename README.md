@@ -48,6 +48,35 @@ cp .env.example .env
 # open .env and modify the environment variables (if needed)
 ```
 
+## OS-Specific Setup Guides
+
+For detailed installation instructions for your operating system, see:
+
+| Operating System | Guide |
+|------------------|-------|
+| 🍎 **macOS** | [macOS Setup Guide](./md-docs/info/project-setup/macos-setup.md) |
+| 🪟 **Windows** | [Windows Setup Guide](./md-docs/info/project-setup/windows-setup.md) |
+| 🐧 **Linux** | [Linux Setup Guide](./md-docs/info/project-setup/linux-setup.md) |
+
+### Package Manager Compatibility
+
+> **Note**: This project supports multiple package managers for **local development**:
+> - ✅ **npm** - Works out of the box
+> - ✅ **Yarn** - Default and recommended
+> - ✅ **pnpm** - Works out of the box
+> - ✅ **Bun** - Works out of the box
+>
+> ⚠️ **Docker workflows require Yarn**: The Docker configuration (`Dockerfile` and `docker-compose` files) uses `yarn.lock` and Yarn commands. If you plan to use Docker, ensure Yarn is installed.
+
+### Package Manager Setup Guides
+
+| Package Manager | Setup Guide |
+|-----------------|-------------|
+| 📦 **npm** | [npm Setup Guide](./md-docs/info/package-manager-setup/npm-setup-guide.md) |
+| 🧶 **Yarn** | [Yarn Setup Guide](./md-docs/info/package-manager-setup/yarn-setup-guide.md) |
+| 🚀 **pnpm** | [pnpm Setup Guide](./md-docs/info/package-manager-setup/pnpm-setup-guide.md) |
+| 🔥 **Bun** | [Bun Setup Guide](./md-docs/info/package-manager-setup/bun-setup-guide.md) |
+
 ## Table of Contents
 
 - [Features](#features)
@@ -91,25 +120,97 @@ cp .env.example .env
 
 ## Commands
 
-Running locally:
+Choose your preferred package manager below. Click to expand the section.
+
+<details>
+<summary><strong>📦 npm</strong></summary>
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+### Production
+
+```bash
+npm run build
+npm start
+```
+
+### Testing
+
+```bash
+# run all tests
+npm test
+
+# run all tests in watch mode
+npm run test:watch
+
+# run test coverage
+npm run coverage
+```
+
+### Docker
+
+```bash
+# run docker container in development mode
+npm run docker:dev
+
+# run docker container in production mode
+npm run docker:prod
+
+# run all tests in a docker container
+npm run docker:test
+```
+
+### Linting
+
+```bash
+# run ESLint
+npm run lint
+
+# fix ESLint errors
+npm run lint:fix
+
+# run prettier
+npm run prettier
+
+# fix prettier errors
+npm run prettier:fix
+```
+
+</details>
+
+<details>
+<summary><strong>🧶 Yarn</strong></summary>
+
+### Installation
+
+```bash
+yarn install
+```
+
+### Development
 
 ```bash
 yarn dev
 ```
 
-Running in production:
-
-```bash
-yarn start
-```
-
-Building for production:
+### Production
 
 ```bash
 yarn build
+yarn start
 ```
 
-Testing:
+### Testing
 
 ```bash
 # run all tests
@@ -122,7 +223,7 @@ yarn test:watch
 yarn coverage
 ```
 
-Docker:
+### Docker
 
 ```bash
 # run docker container in development mode
@@ -135,7 +236,7 @@ yarn docker:prod
 yarn docker:test
 ```
 
-Linting:
+### Linting
 
 ```bash
 # run ESLint
@@ -150,6 +251,140 @@ yarn prettier
 # fix prettier errors
 yarn prettier:fix
 ```
+
+</details>
+
+<details>
+<summary><strong>🚀 pnpm</strong></summary>
+
+### Installation
+
+```bash
+pnpm install
+```
+
+### Development
+
+```bash
+pnpm dev
+```
+
+### Production
+
+```bash
+pnpm build
+pnpm start
+```
+
+### Testing
+
+```bash
+# run all tests
+pnpm test
+
+# run all tests in watch mode
+pnpm test:watch
+
+# run test coverage
+pnpm coverage
+```
+
+### Docker
+
+```bash
+# run docker container in development mode
+pnpm docker:dev
+
+# run docker container in production mode
+pnpm docker:prod
+
+# run all tests in a docker container
+pnpm docker:test
+```
+
+### Linting
+
+```bash
+# run ESLint
+pnpm lint
+
+# fix ESLint errors
+pnpm lint:fix
+
+# run prettier
+pnpm prettier
+
+# fix prettier errors
+pnpm prettier:fix
+```
+
+</details>
+
+<details>
+<summary><strong>🔥 Bun</strong></summary>
+
+### Installation
+
+```bash
+bun install
+```
+
+### Development
+
+```bash
+bun run dev
+```
+
+### Production
+
+```bash
+bun run build
+bun run start
+```
+
+### Testing
+
+```bash
+# run all tests
+bun run test
+
+# run all tests in watch mode
+bun run test:watch
+
+# run test coverage
+bun run coverage
+```
+
+### Docker
+
+```bash
+# run docker container in development mode
+bun run docker:dev
+
+# run docker container in production mode
+bun run docker:prod
+
+# run all tests in a docker container
+bun run docker:test
+```
+
+### Linting
+
+```bash
+# run ESLint
+bun run lint
+
+# fix ESLint errors
+bun run lint:fix
+
+# run prettier
+bun run prettier
+
+# fix prettier errors
+bun run prettier:fix
+```
+
+</details>
 
 ## Environment Variables
 
